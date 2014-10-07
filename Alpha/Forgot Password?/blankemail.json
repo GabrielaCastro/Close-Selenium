@@ -1,0 +1,54 @@
+{
+  "type": "script",
+  "seleniumVersion": "2",
+  "formatVersion": 2,
+  "steps": [
+    {
+      "type": "get",
+      "url": "https://alpha.close.co/users/sign_in"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "link text",
+        "value": "Forgot your password?"
+      }
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "We will email you a link to reset your password."
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "name",
+        "value": "commit"
+      }
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "user_email"
+      },
+      "text": ""
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "name",
+        "value": "commit"
+      }
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "can't be blank"
+    }
+  ],
+  "data": {
+    "configs": {},
+    "source": "none"
+  },
+  "inputs": [],
+  "timeoutSeconds": 60
+}
